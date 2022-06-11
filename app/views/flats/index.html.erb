@@ -1,0 +1,60 @@
+
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Simple Airbnb</span>
+    <a href="/flats/new" class="btn btn-outline-primary">Add Flat</a>
+  </div>
+</nav>
+
+<p id="notice"><%= notice %></p>
+<h2>All our Flats (<%= @flats.length %>)</h2>
+
+
+<div class="cards d-inline-flex p-2">
+   <% @flats.each do |flat| %>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= flat.name %></h5>
+        <p class="card-text"><%= flat.address %></p>
+        <div class="items d-inline-flex">
+          <p class="card-guests"><i class="fa-solid fa-user-astronaut"></i> <%= flat.number_of_guests %></p>
+          <p class="card-price">   <i class="fa-solid fa-dollar-sign"></i> <%= flat.price_per_night %></p>
+        </div>
+      </div>
+      <td class=""><%= link_to 'More Info', flat %></td>
+    </div>
+  <% end %>
+</div class="cards">
+
+<%# <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Description</th>
+      <th>Price per night</th>
+      <th>Number of guests</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead> %>
+
+  <%# <tbody>
+    <% @flats.each do |flat| %>
+      <%# <tr>
+       <%#  <td><%= flat.name %></td>
+       <%#  <td><%= flat.address %></td>
+       <%#  <td><%= flat.description %></td>
+       <%#  <td><%= flat.price_per_night %></td>
+       <%#  <td><%= flat.number_of_guests %></td>
+       <%#  <td><%= link_to 'Show', flat %></td>
+       <%# <td><%= link_to 'Edit', edit_flat_path(flat) %></td>
+       <%# <td><%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%# </tr>
+    <%# <% end %>
+  <%# </tbody>
+</table>
+
+<br> %>
+
+<%# <%= link_to 'New Flat', new_flat_path %>
